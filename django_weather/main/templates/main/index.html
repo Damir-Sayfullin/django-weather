@@ -6,4 +6,17 @@
 
 {% block body %}
     <h1>Главная страница</h1>
+    <form method="get">
+        <input type="text" name="city" placeholder="Введите название города" required>
+        <button type="submit">Узнать погоду</button>
+    </form>
+    {% if status %}
+        {% if status == 'ok' %}
+            <h2>Погода в {{ weather_data.city }}:</h2>
+            <p>Температура: {{ weather_data.temperature }}°C</p>
+        {% else %}
+            <p>Город {{ weather_data.city }} не найден!</p>
+        {% endif %}
+    {% endif %}
+    <a href="{% url 'history' %}">Посмотреть историю поиска</a>
 {% endblock %}
