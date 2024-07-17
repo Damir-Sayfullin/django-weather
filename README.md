@@ -28,6 +28,9 @@ git clone https://github.com/Damir-Sayfullin/django-weather.git
 ```
 3. Создайте виртуальное окружение и установите зависимости:
 ```commandline
+python -m venv venv
+venv\Scripts\activate.bat (Windows)
+source venv/bin/activate (Linux и MacOS)
 pip install -r requirements.txt
 ```
 4. Запустите проект, выполнив команды:
