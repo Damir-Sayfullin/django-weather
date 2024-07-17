@@ -1,3 +1,4 @@
 secrets.txt
 .venv
 .idea
+django_weather/django_weather/settings.py
