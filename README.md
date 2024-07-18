@@ -23,7 +23,7 @@ API для погоды: https://open-meteo.com/
 ```commandline
 git clone https://github.com/Damir-Sayfullin/django-weather.git
 ```
-2. Создайте в папке проекта файл `secret.txt` и запишите в нем ключи в виде:
+2. Создайте в папке проекта файл `secret.json` и запишите в нем ключи в виде:
 ```json
 {
   "SECRET_KEY": "your-django-secret-key",
