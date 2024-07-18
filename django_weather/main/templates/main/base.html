@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -6,13 +7,62 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'main/img/icon.svg' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <!-- todo: добовать header -->
-    <div class="container">
-        {% block body %}{% endblock %}
-    </div>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img class="bi me-2" width="40" height="32" src="{% static 'main/img/icon.svg' %}">
+            <span class="fs-4">Django-Weather</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            {% block header %}{% endblock %}
+            <li class="nav-item">
+                <a href="https://github.com/Damir-Sayfullin/django-weather" class="nav-link" target="_blank">GitHub</a>
+            </li>
+
+        </ul>
+    </header>
+</div>
+
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+
+<div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+            <span class="mb-3 mb-md-0 text-muted">© 2024 Сайфуллин Дамир</span>
+        </div>
+
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-muted" href="https://kazan.hh.ru/resume/80087a9bff0b5a2c9a0039ed1f70516970566c"
+                   target="_blank">
+                    <img class="bi" width="24" height="24" src="{% static 'main/img/hh.svg' %}">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-muted" href="https://github.com/Damir-Sayfullin" target="_blank">
+                    <img class="bi" width="24" height="24" src="{% static 'main/img/github.svg' %}">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-muted" href="https://t.me/DamirS16" target="_blank">
+                    <img class="bi" width="24" height="24" src="{% static 'main/img/telegram.svg' %}">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-muted" href="https://vk.com/damirsaifullin" target="_blank">
+                    <img class="bi" width="24" height="24" src="{% static 'main/img/vk.svg' %}">
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
 </body>
 </html>

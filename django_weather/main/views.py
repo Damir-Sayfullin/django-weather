@@ -89,3 +89,11 @@ def index(request):
 def history(request):
     history = SearchHistory.objects.order_by('-last_searched')
     return render(request, 'main/history.html', {'history': history})
+
+
+def about_api(request):
+    return render(request, 'main/about-api.html')
+
+
+def about_site(request):
+    return render(request, 'main/about-site.html')
