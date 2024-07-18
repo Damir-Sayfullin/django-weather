@@ -85,6 +85,7 @@ def index(request):
             context['weather_data'] = {'input_city': input_city}
     return render(request, 'main/index.html', context)
 
+
 def history(request):
     history = SearchHistory.objects.order_by('-last_searched')
     return render(request, 'main/history.html', {'history': history})

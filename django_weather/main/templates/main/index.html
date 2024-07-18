@@ -15,8 +15,8 @@
             <h2>Погода в {{ weather_data.city }}:</h2>
             <h6>Полный адрес: {{ weather_data.full_address }}</h6>
             <h6>Координаты: {{ weather_data.lat }}, {{ weather_data.lon }} </h6>
+            <p>Погода: {{ weather_data.weather_description }}</p>
             <p>Температура: {{ weather_data.temperature }}°C</p>
-            <p>Погода: {{ weather_data.weather_code }} - {{ weather_data.weather_description }}</p>
         {% elif status == 'city_not_found' %}
             <p>Город {{ weather_data.input_city }} не найден!</p>
         {% elif status == 'weather_error' %}
