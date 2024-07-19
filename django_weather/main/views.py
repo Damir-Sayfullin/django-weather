@@ -83,6 +83,10 @@ def index(request):
             search_entry.save()
         else:
             context['weather_data'] = {'input_city': input_city}
+
+    cities = SearchHistory.objects.values_list('city', flat=True)
+    context['cities'] = cities
+
     return render(request, 'main/index.html', context)
 
 

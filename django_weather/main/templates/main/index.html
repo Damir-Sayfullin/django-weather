@@ -22,7 +22,12 @@
             <h4 class="display-8 fw-bold">Введите населенный пункт</h4>
             <div class="col-lg-6 mx-auto">
                 <form method="get">
-                    <input type="text" class="form-control my-3" name="city" placeholder="Введите название города" value="{{ weather_data.input_city }}" required>
+                    <input type="text" list="cities" class="form-control my-3" name="city" placeholder="Введите название города" value="{{ weather_data.input_city }}" required>
+                    <datalist id="cities">
+                        {% for city in cities %}
+                            <option>{{ city }}</option>
+                        {% endfor %}
+                    </datalist>
                     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"><button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Узнать погоду</button></div>
                 </form>
             </div>
