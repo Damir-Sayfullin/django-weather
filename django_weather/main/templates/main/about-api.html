@@ -13,4 +13,16 @@
 
 {% block body %}
     <h1>Об API</h1>
+    <h5>Получение всех данных о всех городах:</h5>
+    <div>
+        <kbd class="mx-1 fs-6" style="background-color: green">GET</kbd>
+        <kbd class="fs-6" >/api/</kbd>
+        <a href="/api/" class="btn btn-primary btn-lg py-0 fs-6 mx-2" target="_blank">Запустить</a>
+    </div>
+    <div>
+        <h5>Получение данных о конкретном городе. Подставьте свой город вместо {city}:</h5>
+        <kbd class="mx-1 fs-6" style="background-color: green">GET</kbd>
+        <kbd class="fs-6" >/api/?city={city}</kbd>
+        <a href="/api/?city=Москва" class="btn btn-primary btn-lg py-0 fs-6 mx-2" target="_blank">Запустить</a>
+    </div>
 {% endblock %}
