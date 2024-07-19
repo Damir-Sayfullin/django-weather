@@ -13,6 +13,20 @@
 На сайте можно посмотреть историю поиска по городам, а также получить эти данные с API.
 Для получения координат используется API [DaData](https://dadata.ru/), а для получения погоды по этим координатам - API [Open-Meteo](https://open-meteo.com).
 
+### Скриншоты
+*Главная страница с автодополнением и историей поиска для каждого пользователя*
+<img src="https://i.ibb.co/GRdyDQH/django-weather-1.png" alt="django-weather-1" border="0">
+*Ошибка при вводе несуществующего города*
+<img src="https://i.ibb.co/g41tx86/django-weather-3.png" alt="django-weather-3" border="0">
+*Вывод текущей погоды*
+<img src="https://i.ibb.co/dM5LYsp/django-weather-2.png" alt="django-weather-2" border="0">
+*История поиска*
+<img src="https://i.ibb.co/r788MCL/django-weather-4.png" alt="django-weather-4" border="0">
+*Страница "Об API"*
+<img src="https://i.ibb.co/8DqjkcZ/django-weather-5.png" alt="django-weather-5" border="0">
+*Страница "О сайте"*
+<img src="https://i.ibb.co/SyXNnSV/django-weather-6.png" alt="django-weather-6" border="0">
+
 ### Используемый стек технологий:
 * python 3.9
 * django 4.2.14
