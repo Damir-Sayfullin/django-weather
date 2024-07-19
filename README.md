@@ -15,17 +15,28 @@
 
 ### Скриншоты
 *Главная страница с автодополнением и историей поиска для каждого пользователя*
-<img src="https://i.ibb.co/GRdyDQH/django-weather-1.png" alt="django-weather-1" border="0">
+
+<img src="https://i.ibb.co/GRdyDQH/django-weather-1.png" alt="django-weather-1" border="0" width="500px">
+
 *Ошибка при вводе несуществующего города*
-<img src="https://i.ibb.co/g41tx86/django-weather-3.png" alt="django-weather-3" border="0">
+
+<img src="https://i.ibb.co/g41tx86/django-weather-3.png" alt="django-weather-3" border="0" width="500px">
+
 *Вывод текущей погоды*
-<img src="https://i.ibb.co/dM5LYsp/django-weather-2.png" alt="django-weather-2" border="0">
+
+<img src="https://i.ibb.co/dM5LYsp/django-weather-2.png" alt="django-weather-2" border="0" width="500px">
+
 *История поиска*
-<img src="https://i.ibb.co/r788MCL/django-weather-4.png" alt="django-weather-4" border="0">
+
+<img src="https://i.ibb.co/r788MCL/django-weather-4.png" alt="django-weather-4" border="0" width="500px">
+
 *Страница "Об API"*
-<img src="https://i.ibb.co/8DqjkcZ/django-weather-5.png" alt="django-weather-5" border="0">
+
+<img src="https://i.ibb.co/8DqjkcZ/django-weather-5.png" alt="django-weather-5" border="0" width="500px">
+
 *Страница "О сайте"*
-<img src="https://i.ibb.co/SyXNnSV/django-weather-6.png" alt="django-weather-6" border="0">
+
+<img src="https://i.ibb.co/SyXNnSV/django-weather-6.png" alt="django-weather-6" border="0" width="500px">
 
 ### Используемый стек технологий:
 * python 3.9
