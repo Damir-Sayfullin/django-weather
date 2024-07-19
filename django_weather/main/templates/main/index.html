@@ -57,4 +57,19 @@
             </div>
         {% endif %}
     {% endif %}
+
+    {% if previous_cities %}
+        <h3 class="display-8 fw-bold">История поиска</h3>
+        <ul class="list-group list-group-horizontal">
+            {% for city in previous_cities %}
+                <a href="{% url 'index' %}?city={{ city }}">
+                    <button type="button" class="btn btn-outline-primary my-3 mx-2 ms-0 mt-0">{{ city }}</button>
+                </a>
+            {% endfor %}
+        </ul>
+        <form method="get" action="">
+            <input type="hidden" name="clear" value="true">
+            <button class="btn btn-primary btn-md" type="submit">Очистить историю поиска</button>
+        </form>
+    {% endif %}
 {% endblock %}

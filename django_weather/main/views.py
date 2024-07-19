@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import SearchHistory
 import requests
 import json
+from urllib.parse import quote, unquote
 
 # Create your views here.
 weather_codes = {
@@ -38,6 +39,11 @@ weather_codes = {
 
 def index(request):
     context = {}
+
+    previous_cities = request.COOKIES.get('previous_cities', '')
+    if previous_cities:
+        previous_cities = [unquote(city) for city in previous_cities.split(',')]
+
     if 'city' in request.GET:
         input_city = request.GET['city']
         context['status'] = 'ok'
@@ -68,6 +74,14 @@ def index(request):
             context['status'] = 'city_not_found'
 
         if context['status'] == 'ok':
+            if previous_cities:
+                if city in previous_cities:
+                    previous_cities.remove(city)
+                previous_cities.insert(0, city)
+                previous_cities = previous_cities[:5]
+            else:
+                previous_cities = [city]
+
             context['weather_data'] = {
                 'input_city': input_city,
                 'city': city,
@@ -86,8 +100,17 @@ def index(request):
 
     cities = SearchHistory.objects.values_list('city', flat=True)
     context['cities'] = cities
+    context['previous_cities'] = previous_cities
 
-    return render(request, 'main/index.html', context)
+    if 'clear' in request.GET:
+        context['previous_cities'] = []
+        response = render(request, 'main/index.html', context)
+        response.set_cookie('previous_cities', '', max_age=0)
+        return response
+
+    response = render(request, 'main/index.html', context)
+    response.set_cookie('previous_cities', ','.join([quote(city) for city in previous_cities]), max_age=30 * 24 * 60 * 60)  # 30 days
+    return response
 
 
 def history(request):
