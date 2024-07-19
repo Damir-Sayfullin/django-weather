@@ -13,9 +13,22 @@
 
 {% block body %}
     <h1>История поиска</h1>
-    <ul>
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Город</th>
+            <th scope="col">Количество поисков</th>
+            <th scope="col">Последний поиск</th>
+        </tr>
+        </thead>
+        <tbody>
         {% for history in history %}
-            <li>{{ history.city }} - {{ history.search_count }} - {{ history.last_searched }}</li>
+            <tr>
+                <td>{{ history.city }}</td>
+                <td>{{ history.search_count }}</td>
+                <td>{{ history.last_searched }}</td>
+            </tr>
         {% endfor %}
-    </ul>
+        </tbody>
+    </table>
 {% endblock %}

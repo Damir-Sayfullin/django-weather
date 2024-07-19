@@ -13,4 +13,56 @@
 
 {% block body %}
     <h1>О сайте</h1>
+
+    <p class="lead fw-normal"><b class="fs-4 fw-semibold">Django-Weather</b> - это веб-приложение для получения текущей погоды в любом городе.
+        На сайте можно посмотреть историю поиска по городам, а также получить эти данные с API.
+        Для получения координат используется API <a href="https://dadata.ru/">DaData</a>,
+        а для получения погоды по этим координатам - API <a href="https://open-meteo.com/">Open-Meteo</a>.
+    </p>
+
+    <p class="lead fw-normal"><b class="fs-4 fw-semibold">Используемый стек технологий:</b>
+        <ul class="list-group" style="width: 300px;">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                python
+                <span class="badge bg-primary rounded-pill">3.9</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                django
+                <span class="badge bg-primary rounded-pill">4.2.14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                requests
+                <span class="badge bg-primary rounded-pill">2.32.3</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                djangorestframework
+                <span class="badge bg-primary rounded-pill">3.15.2</span>
+            </li>
+        </ul>
+    </p>
+
+    <p class="lead fw-normal"><b class="fs-4 fw-semibold">Задачи:</b>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ✅ Ввод названия города и получение прогноза погода в этом городе на ближайшее время.
+Вывод данных должен быть в удобно читаемом формате.
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ✅ API, показывающее сколько раз вводили какой город
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ⬛ Сделать автодополнение (подсказки) при вводе города
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ⬛ При повторном посещении сайта будет предложено посмотреть погоду в городе,
+  в котором пользователь уже смотрел ранее и история поиска для каждого пользователя
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ⬛ Написать тесты
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                ⬛ Поместить в Docker
+            </li>
+        </ul>
+    </p>
 {% endblock %}

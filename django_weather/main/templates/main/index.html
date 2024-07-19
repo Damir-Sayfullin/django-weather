@@ -1,4 +1,5 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}
     Погода
@@ -12,25 +13,43 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Главная страница</h1>
-    <form method="get">
-        <input type="text" name="city" placeholder="Введите название города" value="{{ weather_data.input_city }}" required>
-        <button type="submit">Узнать погоду</button>
-    </form>
+    {% if status == 'ok' %}
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-2 text-center">
+    {% endif %}
+
+        <div class="px-6 py-0 my-0 text-center">
+            <img class="d-block mx-auto mb-4" src="{% static 'main/img/icon.svg' %}" width="100" height="100">
+            <h4 class="display-8 fw-bold">Введите населенный пункт</h4>
+            <div class="col-lg-6 mx-auto">
+                <form method="get">
+                    <input type="text" class="form-control my-3" name="city" placeholder="Введите название города" value="{{ weather_data.input_city }}" required>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center"><button type="submit" class="btn btn-primary btn-lg px-4 gap-3">Узнать погоду</button></div>
+                </form>
+            </div>
+        </div>
+
     {% if status %}
         {% if status == 'ok' %}
-            <h2>Погода в {{ weather_data.city }}:</h2>
-            <h6>Полный адрес: {{ weather_data.full_address }}</h6>
-            <h6>Координаты: {{ weather_data.lat }}, {{ weather_data.lon }} </h6>
-            <p>Погода: {{ weather_data.weather_description }}</p>
-            <p>Температура: {{ weather_data.temperature }}°C</p>
+            <div>
+                <h2 class="display-10 fw-bold">Погода в {{ weather_data.city }}:</h2>
+                <h6 class="fw-semibold">Полный адрес: {{ weather_data.full_address }}</h6>
+                <h6 class="fw-semibold">Координаты: {{ weather_data.lat }}, {{ weather_data.lon }} </h6>
+                <h4 class="fw-bold">Погода: {{ weather_data.weather_description }}</h4>
+                <h4 class="fw-bold">Температура: {{ weather_data.temperature }}°C</h4>
+            </div>
+        </div>
         {% elif status == 'city_not_found' %}
-            <p>Город {{ weather_data.input_city }} не найден!</p>
+            <div class="alert alert-danger my-3 mx-5 fw-semibold text-center" role="alert">
+                Город {{ weather_data.input_city }} не найден!
+            </div>
         {% elif status == 'weather_error' %}
-            <p>Произошла ошибка при получении погоды!</p>
+            <div class="alert alert-danger my-3 mx-5 fw-semibold text-center" role="alert">
+                Произошла ошибка при получении погоды!
+            </div>
         {% else %}
-            <p>Произошла неизвестная ошибка!</p>
+            <div class="alert alert-danger my-3 mx-5 fw-semibold text-center" role="alert">
+                Произошла неизвестная ошибка!
+            </div>
         {% endif %}
     {% endif %}
-    <a href="{% url 'history' %}">Посмотреть историю поиска</a>
 {% endblock %}
