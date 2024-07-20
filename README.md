@@ -36,7 +36,7 @@
 
 *Страница "О сайте"*
 
-<img src="https://i.ibb.co/SyXNnSV/django-weather-6.png" alt="django-weather-6" border="0" width="500px">
+<img src="https://i.ibb.co/2gZCkX0/django-weather-6.png" alt="django-weather-6" border="0" width="500px">
 
 ### Используемый стек технологий:
 * python 3.9
@@ -53,7 +53,7 @@ API для погоды: https://open-meteo.com/
 * ✅ При повторном посещении сайта будет предложено посмотреть погоду в городе,
   в котором пользователь уже смотрел ранее и история поиска для каждого пользователя
 * ✅ Написать тесты
-* ⬛ Поместить в Docker
+* ✅ Поместить в Docker
 
 ### Использование:
 1. Клонируйте репозиторий с помощью команды:
