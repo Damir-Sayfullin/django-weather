@@ -73,10 +73,9 @@ venv\Scripts\activate.bat (Windows)
 source venv/bin/activate (Linux и MacOS)
 pip install -r requirements.txt
 ```
-4. Запустите проект, выполнив команды:
+4. Запустите проект, выполнив команду:
 ```commandline
-cd .\django_weather
-python manage.py runserver
+python django_weather/manage.py runserver
 ```
 ### API:
 * Получение всех данных о всех городах:
