@@ -48,7 +48,7 @@ def index(request):
         input_city = request.GET['city']
         context['status'] = 'ok'
 
-        with open('../secret.json') as secret_file:
+        with open('secret.json') as secret_file:
             key = json.load(secret_file)["DADATA_KEY"]
         url = f"http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address"
         headers = {"Content-Type": "application/json", "Accept": "application/json", "Authorization": f"Token {key}"}
